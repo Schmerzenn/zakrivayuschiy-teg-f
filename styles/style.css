@@ -14,8 +14,8 @@
     ),
     repeating-linear-gradient(
       180deg,
-      #e7e7e7,
-      #1a1a1a 2px,
+      #d3d3d3,
+      #d3d3d3 2px,
       transparent 2px,
       transparent 4px
     ),
@@ -118,8 +118,8 @@
   text-shadow: -1px 0 var(--accent-color, #000000),
     0 1px var(--accent-color, #000000), 1px 0 var(--accent-color, #000000),
     0 -1px var(--accent-color, #000000);
-  inset-block-start: 25px;
-  inset-inline-end: 11px;
+  inset-block-start: 27px;
+  inset-inline-end: 25px;
   mix-blend-mode: hard-light;
 }
 
@@ -162,10 +162,10 @@
 .card__icon-button {
   position: relative;
   border: none;
-  padding: 0;
+  padding-right: 1px;
   background-color: transparent;
   cursor: pointer;
-  max-block-size: 38px;
+  max-block-size: 37px;
 }
 .card__icon-button:focus {
   outline: none;
@@ -276,7 +276,7 @@
 .dialog {
   width: clamp(341px, 50%, 357px);
   border: 2px solid var(--accent-color, #000000);
-  padding: 30px 42px 30px 42px;
+  padding: 28px 40px 28px 40px;
   overflow: hidden;
   color: var(--accent-color, #000000);
   font-family: var(--accent-font-family, monospace);
@@ -355,5 +355,9 @@ dialog[open] {
   }
   .card__like-button {
     height: 39px;
+  }
+  .card__poster-label {
+    inset-block-start: 22px;
+    inset-inline-end: 11px;
   }
 }
