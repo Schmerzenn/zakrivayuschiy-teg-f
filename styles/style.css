@@ -35,14 +35,16 @@
   margin: 100px auto 100px auto;
   border: 2px solid var(--accent-color, #000000);
   font-family: var(--accent-font-family, sans-serif);
+  list-style: var(--main-line-height);
   text-align: center;
   background-color: var(--bg-color, #ffffff);
   max-inline-size: 700px;
-  min-block-size: 364px;
+  min-block-size: 368px;
 }
+
 .header__title {
   margin-block-end: 18px;
-  padding-top: 136px;
+  padding-top: 128px;
   font-size: var(
     --main-title-font-size,
     clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem)
@@ -50,6 +52,7 @@
   text-align: center;
   text-transform: uppercase;
 }
+
 .header__text {
   margin-block-end: 24px;
   font-size: var(
@@ -59,9 +62,10 @@
   text-align: center;
   text-transform: uppercase;
 }
+
 .container {
   margin-inline: auto;
-  max-inline-size: var(--max-inline-size, 696px);
+  max-inline-size: 700px;
 }
 
 .content__post {
@@ -69,7 +73,7 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  gap: 47px;
+  gap: 49px;
   margin: 0;
   margin-block-end: 50px;
   padding: 0;
@@ -77,20 +81,23 @@
 }
 .card {
   background-color: var(--bg-color, #ffffff);
+
+  position: relative;
+  border: 2px solid var(--accent-color, #000000);
+  overflow: hidden;
 }
 .card__title {
   display: flex;
   align-items: center;
-  border: 2px solid var(--accent-color, #000000);
-  border-bottom: 0px;
+  border-bottom: 2px solid var(--accent-color, #000000);
   padding: 4px 10px;
   font-size: var(--main-font-size, 18px);
   font-variation-settings: "wght" var(--title-font-weight, 700);
 }
 .card__poster {
   position: relative;
-  border: 2px solid var(--accent-color, #000000);
-  border-bottom: 0px;
+  border-bottom: 2px solid var(--accent-color, #000000);
+  overflow: hidden;
 }
 .card__poster-image {
   display: block;
@@ -112,7 +119,7 @@
     0 1px var(--accent-color, #000000), 1px 0 var(--accent-color, #000000),
     0 -1px var(--accent-color, #000000);
   inset-block-start: 25px;
-  inset-inline-end: 25px;
+  inset-inline-end: 11px;
   mix-blend-mode: hard-light;
 }
 
@@ -128,15 +135,22 @@
 }
 
 .card__content {
-  border: 2px solid var(--accent-color, #000000);
   padding: 25px;
+  border-top: 0px;
+}
+.card__content-box {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.17;
+  row-gap: 27px;
+  margin-bottom: 25px;
 }
 .card__content-text {
-  margin-block-end: 27px;
   color: var(--accent-color, #000000);
   font-family: var(--main-font-family, sans-serif);
   font-weight: var(--text-font-weight, 400);
   font-size: var(--main-font-size, 18px);
+  line-height: 21.2px;
 }
 .card__buttons {
   display: flex;
@@ -205,27 +219,34 @@
 .card__like-button {
   padding: 9px 17px;
   inline-size: 130px;
+  height: 40px;
 }
 
-.filter__one {
+.filter__desaturated {
   filter: saturate(20%) brightness(1.2);
 }
-.filter__two {
+
+.filter__oversaturated {
   filter: saturate(350%);
 }
-.filter__three {
+
+.filter__hue-rotate {
   filter: hue-rotate(30deg);
 }
-.filter__four {
+
+.filter__inverted {
   filter: invert(80%);
 }
-.filter__five {
+
+.filter__sepia-grayscale {
   filter: sepia(90%) grayscale(10%);
 }
-.filter__six {
+
+.filter__blurred {
   filter: blur(10px);
 }
-.filter__seven {
+
+.filter__complex {
   filter: saturate(250%) hue-rotate(110deg) blur(0.2rem) brightness(80%)
     contrast(50%);
 }
@@ -242,8 +263,8 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  inline-size: 335px;
-  block-size: 51px;
+  inline-size: 337px;
+  block-size: 53px;
 }
 .save-icon {
   fill: var(--btn-text-color, #ffffff);
@@ -255,7 +276,7 @@
 .dialog {
   width: clamp(341px, 50%, 357px);
   border: 2px solid var(--accent-color, #000000);
-  padding: 31.5px 32.5px 30.5px 26px;
+  padding: 30px 42px 30px 42px;
   overflow: hidden;
   color: var(--accent-color, #000000);
   font-family: var(--accent-font-family, monospace);
@@ -263,6 +284,11 @@
   text-transform: uppercase;
   background: var(--bg-color, #ffffff);
 }
+
+.dialog form {
+  inline-size: 100%;
+}
+
 dialog[open] {
   display: flex;
   flex-direction: column;
@@ -281,14 +307,14 @@ dialog[open] {
 }
 .dialog__save-icon {
   fill: var(--btn-text-color, #ffffff);
-  inline-size: 39px;
+  min-inline-size: 39px;
   block-size: 39px;
   mix-blend-mode: difference;
 }
 .dialog__text {
   color: var(--accent-color, #000000);
   font-size: 14px;
-  line-height: 150%; /* 21px */
+  line-height: 150%;
   text-transform: uppercase;
   max-inline-size: 234px;
 }
@@ -299,8 +325,8 @@ dialog[open] {
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
-  inline-size: 293px;
   block-size: 38px;
+  inline-size: 100%;
 }
 
 @media (width <= 376px) {
@@ -317,14 +343,17 @@ dialog[open] {
     justify-content: center;
     align-items: center;
     gap: 8px;
-    inline-size: 306px;
-    block-size: 80px;
+    inline-size: 310px;
+    block-size: 85px;
   }
   .save-icon {
-    inline-size: 28px;
-    block-size: 28px;
+    inline-size: 30px;
+    block-size: 29px;
   }
   .dialog__text {
     max-inline-size: 198px;
+  }
+  .card__like-button {
+    height: 39px;
   }
 }

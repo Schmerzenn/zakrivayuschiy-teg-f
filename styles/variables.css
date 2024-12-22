@@ -1,6 +1,7 @@
 :root {
   --main-font-family: "Inter", sans-serif;
   --accent-font-family: "Press Start 2P", fantasy;
+  --main-line-height: 21px;
   --main-font-size: 18px;
   --title-font-weight: 700;
   --text-font-weight: 400;
